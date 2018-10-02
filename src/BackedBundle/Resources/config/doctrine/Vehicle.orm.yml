@@ -1,0 +1,88 @@
+BackedBundle\Entity\Vehicle:
+    type: entity
+    table: vehicle
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        vehicletype:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+            column: vehicleType
+        vehiclegroup:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: vehicleGroup
+        vehiclebrand:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: vehicleBrand
+        vehiclemodel:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: vehicleModel
+        vehicleseats:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: vehicleSeats
+        vehicledoors:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: vehicleDoors
+        vehicletransmission:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: vehicleTransmission
+        vehiclefuel:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: vehicleFuel
+        vehicleimage:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+            column: vehicleImage
+        vehiclepriceperday:
+            type: float
+            nullable: true
+            precision: 255
+            scale: 2
+            column: vehiclePricePerDay
+        vehicleobservations:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: vehicleObservations
+    lifecycleCallbacks: {  }

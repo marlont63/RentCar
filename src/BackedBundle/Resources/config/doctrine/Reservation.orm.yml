@@ -1,0 +1,69 @@
+BackedBundle\Entity\Reservation:
+    type: entity
+    table: reservation
+    indexes:
+        fkReservationVehicle:
+            columns:
+                - vehicleId
+        fkReservationClient:
+            columns:
+                - clientId
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        pickupdate:
+            type: datetime
+            nullable: true
+            column: pickUpDate
+        dropoffdate:
+            type: datetime
+            nullable: true
+            column: dropOffDate
+        reservationnumber:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+            column: reservationNumber
+        totalamount:
+            type: float
+            nullable: true
+            precision: 255
+            scale: 2
+            column: totalAmount
+        observations:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+    manyToOne:
+        clientid:
+            targetEntity: Client
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                clientId:
+                    referencedColumnName: id
+            orphanRemoval: false
+        vehicleid:
+            targetEntity: Vehicle
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                vehicleId:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
