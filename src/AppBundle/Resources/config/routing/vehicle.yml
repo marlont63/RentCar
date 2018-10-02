@@ -1,0 +1,15 @@
+registerVehicleForm:
+    path: /newVehicle
+    defaults : { _controller: "BackedBundle:Vehicle:registerVehicleForm" }
+    methods: GET
+
+
+registerVehicleResult:
+    path: /newVehicle/result
+    defaults: { _controller: "BackedBundle:Vehicle:registerVehicleResult" }
+    
+    
+showAllVehicle:
+    path: /showVehicle
+    defaults : { _controller: "BackedBundle:Vehicle:registerVehicleForm" }
+    methods: GET

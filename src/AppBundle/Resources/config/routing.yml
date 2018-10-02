@@ -1,0 +1,8 @@
+appDefault:
+    resource: "@AppBundle/Resources/config/routing/default.yml"
+    prefix:  /
+    
+appVehicle:
+    resource: "@AppBundle/Resources/config/routing/vehicle.yml"
+    prefix: /vehicle
+    
