@@ -1,0 +1,4 @@
+services:
+#    backed.example:
+#        class: BackedBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
