@@ -17,6 +17,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new BackedBundle\BackedBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Waldo\DatatableBundle\WaldoDatatableBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

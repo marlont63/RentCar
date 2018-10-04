@@ -65,3 +65,25 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+
+assetic:
+    debug:          "%kernel.debug%"
+    use_controller: false
+    bundles:        [ ]
+    filters:
+        cssrewrite: ~
+        
+        
+waldo_datatable:
+    all:    ~
+    js:     ~
+    
+waldo_datatable:
+    all:
+        search:           false
+    js:
+        pageLength: "10"
+        lengthMenu: [[5,10, 25, 50, -1], [5,10, 25, 50, 'All']]
+        dom: '<"clearfix"lf>rtip'
+        jQueryUI: "false"

@@ -3,13 +3,28 @@ registerVehicleForm:
     defaults : { _controller: "BackedBundle:Vehicle:registerVehicleForm" }
     methods: GET
 
-
 registerVehicleResult:
     path: /newVehicle/result
     defaults: { _controller: "BackedBundle:Vehicle:registerVehicleResult" }
     
-    
 showAllVehicle:
     path: /showVehicle
-    defaults : { _controller: "BackedBundle:Vehicle:registerVehicleForm" }
+    defaults : { _controller: "BackedBundle:Vehicle:showAllVehicle" }
     methods: GET
+    
+editVehicle:
+    path: /editVehicle
+    defaults: { _controller: "BackedBundle:Vehicle:editVehicle" }
+    
+removeVehicle:
+    path: /remove
+    defaults: { _controller: "BackedBundle:Vehicle:removeVehicle" }
+    
+updateVehicleResult:
+    path: /updateVehicleResult
+    defaults: { _controller: "BackedBundle:Vehicle:updateVehicleResult" }
+    
+getAllRegisterVehicle:
+    path: /allRegisterVehicle
+    defaults: { _controller: "BackedBundle:Vehicle:getAllRegisterVehicle" }
+    methods: POST

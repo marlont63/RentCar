@@ -1,0 +1,24 @@
+{% extends 'BackedBundle::base.html.twig' %}
+
+{% block title %} Editar Vehiculo {% endblock %}
+
+{% block body %}
+    <div class="limiter" align="center">
+	<div class="container-table100">
+            <div class="wrap-table100">
+                <h1>Actualizar Vehiculo</h1>
+		<div class="table100 ver1 m-b-110">
+                    <div class="form-style-5">
+                        <form action="{{ path('updateVehicleResult') }}" method="POST" {{ form_enctype(form) }}>
+                            {{ form_widget(form) }}
+                            <button class="button" type="submit">Update</button>
+                            <a href="{{ path('showAllVehicle') }}">Cancelar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>                        
+     
+{% endblock %}
+

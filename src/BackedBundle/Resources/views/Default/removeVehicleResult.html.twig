@@ -1,0 +1,26 @@
+{% extends 'BackedBundle::base.html.twig' %}
+
+{% block title %} Register New Vehicle {% endblock %}
+ 
+{% block body %}
+    
+    <div class="limiter">
+    <div class="container-table100">
+	<div class="wrap-table100">
+            <div class="table100 ver1 m-b-110" align="center">
+               <img src="{{ asset('bundles/backed/images/'~ image ~'.png') }}"  width="150" height="150">
+               </br>
+               </br>
+                <h2> {{ info }} </h2>
+                </br>
+               </br>
+               </br>
+               </br>
+               <a href="{{ path('showAllVehicle') }}"><img src="{{ asset('bundles/backed/images/returnIcon.png') }}"  width="50" height="50"></a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
+

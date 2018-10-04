@@ -3,5 +3,54 @@
 {% block title %} Vehicles {% endblock %}
  
 {% block body %}
-    
-{% endblock
+
+<div class="limiter">
+    <div class="container-table100">
+	<div class="wrap-table100">
+            <div class="table100 ver1 m-b-110">
+                <a href="{{ path('registerVehicleForm') }}"><img src="{{ asset('bundles/backed/images/addVehicle.png') }}"  width="100" height="100"></a>
+                <table data-vertable="ver1">
+                    <thead>
+                            <tr class="row100 head">
+                                    <th class="column100 column1" data-column="column1"></th>
+                                    <th class="column100 column2" data-column="column2">Marca</th>
+                                    <th class="column100 column3" data-column="column3">Modelo</th>
+                                    <th class="column100 column4" data-column="column4">Tipo</th>
+                                    <th class="column100 column5" data-column="column5">Grupo</th>
+                                    <th class="column100 column6" data-column="column6">Asientos</th>
+                                    <th class="column100 column7" data-column="column7">Puertas</th>
+                                    <th class="column100 column8" data-column="column8">Combustible</th>
+                                    <th class="column100 column9" data-column="column9">Trasmisión</th>
+                                    <th class="column100 column9" data-column="column9">Precio por día</th>
+                                    <th class="column100 column9" data-column="column9">Image</th>
+                                    <th class="column100 column9" data-column="column9"></th>
+                                    <th class="column100 column9" data-column="column9"></th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in vehicles %}
+                            <tr class="row100">
+                                <td class="column100 column1" data-column="column1">{{ item.id }}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehiclebrand}}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehiclemodel }}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehicletype }}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehiclegroup }}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehicleseats}}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehicledoors }}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehiclefuel }}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehicletransmission }}</td>
+                                <td class="column100 column1" data-column="column1">{{ item.vehiclepriceperday }}</td>
+                                <td class="column100 column1" data-column="column1"><img src="{{ asset('bundles/backed/images/edit.png') }}"  width="20" height="20"> </td>
+                                <td class="column100 column1" data-column="column1"><a href="{{ path('editVehicle', {'id': item.id }) }}"><img src="{{ asset('bundles/backed/images/edit.png') }}"  width="20" height="20"></a> </td>
+                                <td class="column100 column1" data-column="column1"><a href="{{ path('removeVehicle', {'id': item.id }) }}"><img src="{{ asset('bundles/backed/images/remove.png') }}"  width="20" height="20"></a> </td>
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+		</table>
+            </div>
+        </div>
+    </div>
+</div> 
+{% endblock %}
+
