@@ -15,10 +15,61 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class VehicleController extends Controller
 {
     
-    public function getAllRegisterVehicleAction(Request $request){
+    public function uploadImageAction(Request $request) {
+        
+        $file = $request->files->get("image");
+        
+        $id = $request->get("id");
         
         $em = $this->getDoctrine()->getManager();
-        $vehicles = $em->getRepository("BackedBundle:Vehicle")->findAll();
+        
+        $vehicle = $em->getRepository("BackedBundle:Vehicle")->findOneBy(array(
+            "id" => $id
+        ));
+        
+        $result = null;
+        
+        if(isset($vehicle)) {
+
+            if(!empty($file) && $file != null) {
+                
+                $ext = $file->guessExtension();
+                $fileName = $vehicle->getvehiclebrand().$vehicle->getvehiclebrand().time().".".$ext;
+                $file->move("uploads/vehicles",$fileName);
+                
+                $vehicle->setVehicleimage($fileName);
+                $em->persist($vehicle);
+                $em->flush();
+                
+                
+                $result = array(
+                    "code" => 200,
+                    "msg" => "Imagen uploaded success!!!"
+                );
+                
+                
+            }else {
+                $result = array(
+                    "code" => 400,
+                    "msg" => "Error"
+                );
+            }
+            
+            $helpers = $this->get("app.helpers");
+            
+            return $helpers->json($result);
+        }
+    }
+    
+    public function getAllRegisterVehicleAction(Request $request){
+        
+        
+        
+        $em = $this->getDoctrine()->getManager();
+        $vehicles = $em->getRepository("BackedBundle:Vehicle")->findBy(
+                array(),
+                array('vehicletype' => 'ASC')
+        );
         $helpers = $this->get("app.helpers");
         
         $array = array(

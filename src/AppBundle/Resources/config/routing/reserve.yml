@@ -1,0 +1,4 @@
+registerReserve:
+    path: /add
+    defaults: { _controller: "BackedBundle:Reserve:addReserve"}
+    methods: POST

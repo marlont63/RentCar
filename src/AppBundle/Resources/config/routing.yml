@@ -6,3 +6,6 @@ appVehicle:
     resource: "@AppBundle/Resources/config/routing/vehicle.yml"
     prefix: /vehicle
     
+appReserve:
+    resource: "@AppBundle/Resources/config/routing/reserve.yml"
+    prefix: /reserve

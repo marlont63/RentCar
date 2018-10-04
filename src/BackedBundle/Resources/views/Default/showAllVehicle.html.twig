@@ -40,7 +40,7 @@
                                 <td class="column100 column1" data-column="column1">{{ item.vehiclefuel }}</td>
                                 <td class="column100 column1" data-column="column1">{{ item.vehicletransmission }}</td>
                                 <td class="column100 column1" data-column="column1">{{ item.vehiclepriceperday }}</td>
-                                <td class="column100 column1" data-column="column1"><img src="{{ asset('bundles/backed/images/edit.png') }}"  width="20" height="20"> </td>
+                                <td class="column100 column1" data-column="column1"><img src="{{ asset('uploads/vehicles/' ~ item.vehicleimage ~ '') }}"  width="20" height="20"> </td>
                                 <td class="column100 column1" data-column="column1"><a href="{{ path('editVehicle', {'id': item.id }) }}"><img src="{{ asset('bundles/backed/images/edit.png') }}"  width="20" height="20"></a> </td>
                                 <td class="column100 column1" data-column="column1"><a href="{{ path('removeVehicle', {'id': item.id }) }}"><img src="{{ asset('bundles/backed/images/remove.png') }}"  width="20" height="20"></a> </td>
 

@@ -28,3 +28,8 @@ getAllRegisterVehicle:
     path: /allRegisterVehicle
     defaults: { _controller: "BackedBundle:Vehicle:getAllRegisterVehicle" }
     methods: POST
+    
+uploadVehicleImage:
+    path: /uploadImage
+    defaults: { _controller: "BackedBundle:Vehicle:uploadImage"}
+    methods: POST

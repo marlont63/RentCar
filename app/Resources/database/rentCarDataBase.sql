@@ -4,7 +4,7 @@ CREATE TABLE client (
     id int(255) auto_increment not null,
     name varchar(255),
     lastName varchar(255),
-    bithDay datetime,
+    birthDay datetime,
     address varchar(500),
     email varchar(255),
     telephone varchar(100),
